@@ -14,4 +14,5 @@ class TaskDetail(DetailView):
 
 __all__ = [
     'TaskView',
+    'TaskDetail',
 ]

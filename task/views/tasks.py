@@ -5,7 +5,7 @@ from django.template.context import RequestContext
 
 
 class Home(View):
-    template_name = 'tasks/home.html'
+    template_name = 'task/home.html'
     context = {}
 
     def get(self, request, *args, **kwargs):
