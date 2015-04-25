@@ -22,12 +22,12 @@ class UserCreateForm(Form):
         }
         if self.cleaned_data['name']:
             params['first_name'] = self.cleaned_data['name']
-        User.objects.created_user(**params)
+        User.objects.create_user(**params)
 
-    def clean_password_confirm(self, password):
+    def clean_password_confirm(self):
         password1 = self.cleaned_data['password']
         password2 = self.cleaned_data['password_confirm']
 
         if password1 != password2:
             raise ValidationError("As senhas devem ser iguais.")
-        return password
+        return password1
