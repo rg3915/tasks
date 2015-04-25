@@ -1,0 +1,33 @@
+<html>
+<head>
+	{% block title %}
+		<title></title>
+	{% endblock %}
+	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script scr="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+	<meta name="viewport" content="width=devide-width, initial-scale=1">
+
+</head>
+<body>
+	<div class="container">
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<h1>Gerenciador de Tarefas</h1>
+				</div><!-- navbar-header -->
+			</div><!-- container-fluid -->
+		</nav>
+		<div>
+			{% block content %}
+			{% endblock %}
+		</div>
+	</div><!-- container -->
+</body>
+</html>
