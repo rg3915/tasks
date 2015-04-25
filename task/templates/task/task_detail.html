@@ -1,16 +1,15 @@
-<html>
-<head>
-	
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block content %}
 	<h1>Detalhes da tarefa</h1>
 
-	Nome: {{ object.name }}</br>
-	Data de criação: {{ object.created_at|date:"d/m/Y H:i" }}</br>
-	Descrição: {{ object.description }}</br>
-	Status: {% if object.finalized %}Finalizado{% else %}Aberto{% endif %}</br>
-	{% if object.date_execution %}
-		Data de execução: {{ object.date_execution }}</br>
-	{% endif %}
-</body>
-</html>
+	<dl class="dl-horizontal">
+		<dt>Nome:</dt> <dd>{{ object.name }}</dd>
+		<dt>Data de criação:</dt> <dd>{{ object.created_at|date:"d/m/Y H:i" }}</dd>
+		<dt>Descrição:</dt> <dd>{{ object.description }}</dd>
+		<dt>Status:</dt> <dd>{% if object.finalized %}Finalizado{% else %}Aberto{% endif %}</dd>
+		{% if object.date_execution %}
+			<dt>Data de execução:</dt> <dd>{{ object.date_execution }}</dd>
+		{% endif %}
+	</dl>
+{% endblock %}

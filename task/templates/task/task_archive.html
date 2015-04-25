@@ -1,22 +1,23 @@
-<html>
-<head>
-	
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block content %}
 	<h1>Tarefas</h1>
-	<table>
-		<tr>
-			<th>Nome</th>
-			<th>Data de criação</th>
-			<th>Status</th>
-		</tr>
-		{% for item in latest %}
+	<table class="table table-striped">
+		<thead>
 			<tr>
-				<td><a href="/task/{{ item.pk }}">{{ item.name }}</a></td>
-				<td> {{ item.created_at }}</td>
-				<td> {{ item.finalized }}</td>
+				<th>Nome</th>
+				<th>Data de criação</th>
+				<th>Finalizado</th>
 			</tr>
-		{% endfor %}
+		</thead>
+		<tbody>
+			{% for item in latest %}
+				<tr>
+					<td><a href="/task/{{ item.pk }}">{{ item.name }}</a></td>
+					<td>{{ item.created_at|date:"d/m/Y H:i" }}</td>
+					<td>{% if item.finalized %}Sim{% else %}Não{% endif %}</td>
+				</tr>
+			{% endfor %}
+		</tbody>
 	</table>
-</body>
-</html>
+{% endblock %}
