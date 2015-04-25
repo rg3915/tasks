@@ -1,0 +1,16 @@
+<html>
+<head>
+	
+</head>
+<body>
+	<h1>Detalhes da tarefa</h1>
+
+	Nome: {{ object.name }}</br>
+	Data de criação: {{ object.created_at|date:"d/m/Y H:i" }}</br>
+	Descrição: {{ object.description }}</br>
+	Status: {% if object.finalized %}Finalizado{% else %}Aberto{% endif %}</br>
+	{% if object.date_execution %}
+		Data de execução: {{ object.date_execution }}</br>
+	{% endif %}
+</body>
+</html>
