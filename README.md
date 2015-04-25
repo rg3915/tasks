@@ -9,17 +9,17 @@ Task scheduling system made in Django 1.7
 
 * Crie o app fora da pasta de configuração mesmo, ou seja,
 
-	.
-	├── manage.py
-	├── task_project
-	│   ├── settings.py
-	│   └── urls.py
-    └── task
-        ├── admin.py
-        ├── forms.py
-        ├── models.py
-        ├── tests.py
-        └── views.py
+        .
+	    ├── manage.py
+	    ├── task_project
+	    │   ├── settings.py
+	    │   └── urls.py
+	    └── task
+	        ├── admin.py
+	        ├── forms.py
+	        ├── models.py
+	        ├── tests.py
+	        └── views.py
  
 * Importe todos os `Fields` separadamente, isso melhora a performance.
 
@@ -30,3 +30,6 @@ Task scheduling system made in Django 1.7
 
 * views personalizada
 
+	__init__.py
+	generic.py
+	tasks.py
