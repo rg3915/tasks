@@ -1,0 +1,22 @@
+<html>
+<head>
+	
+</head>
+<body>
+	<h1>Tarefas</h1>
+	<table>
+		<tr>
+			<th>Nome</th>
+			<th>Data de criação</th>
+			<th>Status</th>
+		</tr>
+		{% for item in latest %}
+			<tr>
+				<td><a href="/task/{{ item.pk }}">{{ item.name }}</a></td>
+				<td> {{ item.created_at }}</td>
+				<td> {{ item.finalized }}</td>
+			</tr>
+		{% endfor %}
+	</table>
+</body>
+</html>
