@@ -28,8 +28,13 @@ Task scheduling system made in Django 1.7
 	from django.db.models import BooleanField
 	from django.db.models import DateTimeField
 
-* views personalizada
+* views personalizadas
 
-	__init__.py
-	generic.py
-	tasks.py
+        .
+	    └── task
+	        ├── views.py* (ja era)
+	        ├── ...
+		    └── views
+		        ├── __init__.py
+	    	    ├── generic.py
+	    	    └── tasks.py
