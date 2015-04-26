@@ -13,7 +13,8 @@ class Home(View):
     context = {}
 
     def get(self, request, *args, **kwargs):
-        self.context['counter'] = Task.objects.filter(finalized=False).count()
+        self.context['counter'] = Task.objects.filter(
+            finalized=False, user=request.user.id).count()
         return render_to_response(self.template_name, self.context, RequestContext(request))
 
 
@@ -55,7 +56,9 @@ class AddTask(View):
     def post(self, request, *args, **kwargs):
         form = FormTask(request.POST)
         if form.is_valid():
-            form.save()
+            task = form.save()
+            task.user = request.user
+            task.save()
             return redirect('/task/')
         else:
             self.context['form'] = form
