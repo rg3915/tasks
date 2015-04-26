@@ -4,12 +4,13 @@
 	<h1>Detalhes da tarefa</h1>
 
 	<dl class="dl-horizontal">
-		<dt>Nome:</dt> <dd>{{ object.name }}</dd>
+		<dt>Tarefa:</dt> <dd>{{ object.name }}</dd>
 		<dt>Data de criação:</dt> <dd>{{ object.created_at|date:"d/m/Y H:i" }}</dd>
 		<dt>Descrição:</dt> <dd>{{ object.description }}</dd>
 		<dt>Status:</dt> <dd>{% if object.finalized %}Finalizado{% else %}Aberto{% endif %}</dd>
 		{% if object.date_execution %}
 			<dt>Data de execução:</dt> <dd>{{ object.date_execution }}</dd>
 		{% endif %}
+		<dt>Nome:</dt> <dd>{{ object.user }}</dd>
 	</dl>
 {% endblock %}
