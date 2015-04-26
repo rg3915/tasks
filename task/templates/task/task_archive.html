@@ -7,7 +7,7 @@
 			<tr>
 				<th>Nome</th>
 				<th>Data de criação</th>
-				<th>Finalizado</th>
+				<th class="text-center">Finalizado</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -15,7 +15,12 @@
 				<tr>
 					<td><a href="/task/{{ item.pk }}">{{ item.name }}</a></td>
 					<td>{{ item.created_at|date:"d/m/Y H:i" }}</td>
-					<td>{% if item.finalized %}Sim{% else %}Não{% endif %}</td>
+					<td class="text-center">
+						{% if item.finalized %}
+							<i class="glyphicon glyphicon-ok" style="color: #44AD41"></i>
+						{% else %}
+							<i class="glyphicon glyphicon-minus" style="color: #DE2121"></i>
+						{% endif %}</td>
 				</tr>
 			{% endfor %}
 		</tbody>
