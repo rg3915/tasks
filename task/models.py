@@ -4,6 +4,9 @@ from django.db.models import TextField
 from django.db.models import EmailField
 from django.db.models import BooleanField
 from django.db.models import DateTimeField
+from django.db.models import ForeignKey
+
+from django.contrib.auth.models import User
 
 
 class Task(Model):
@@ -15,6 +18,8 @@ class Task(Model):
     created_at = DateTimeField(
         auto_now_add=True, auto_now=False, verbose_name='criado em')
     modified_at = DateTimeField(auto_now_add=False, auto_now=True)
+    user = ForeignKey(
+        User, verbose_name='usuário', related_name='tasks', blank=True, null=True)
 
     class Meta:
         ordering = ['-created_at']
