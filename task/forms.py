@@ -2,6 +2,8 @@ from django.forms import Form
 from django.forms import CharField
 from django.forms import EmailField
 from django.forms import PasswordInput
+from django.forms import ModelForm
+from task.models import Task
 
 from django.core.exceptions import ValidationError
 from django.contrib.auth.models import User
@@ -31,3 +33,10 @@ class UserCreateForm(Form):
         if password1 != password2:
             raise ValidationError("As senhas devem ser iguais.")
         return password1
+
+
+class FormTask(ModelForm):
+
+    class Meta:
+        model = Task
+        fields = ['name', 'description', 'finalized']
