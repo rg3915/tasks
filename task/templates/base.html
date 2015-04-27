@@ -1,3 +1,6 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
 <html>
 <head>
 	{% block title %}
@@ -16,6 +19,8 @@
 
 	<!-- Latest compiled and minified JavaScript -->
 	<script scr="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+	<script scr="{% static "js/scripts.js" %}"></script>
 
 {% block extrastyle %}{% endblock %}
 
