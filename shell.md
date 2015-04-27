@@ -14,8 +14,11 @@
 	print(q.query)
 
 gt = greater
+
 gte = greater then
+
 lt = lower
+
 lte = lower then
 
 Com case-sensitive
@@ -31,7 +34,9 @@ Começa com ...
 	Task.objects.filter(name__startswith='Coffee')
 
 fk --> atributo_set
+
 m2m --> atributos
+
 o2o --> atributo
 
 	u = User.objects.all()
